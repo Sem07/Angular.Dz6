@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "dz6"
+    }
+  },
+  "defaultProject": "dz6",
+  "cli": {
+    "analytics": false
+  }
 }
