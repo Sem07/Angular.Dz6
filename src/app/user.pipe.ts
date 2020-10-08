@@ -5,13 +5,16 @@ import { User } from './models/User';
   name: 'user'
 })
 export class UserPipe implements PipeTransform {
-
-  transform(value: [], ...args: string[]): any {
-   for (let user of value){
-     const a = user + 2
-     return a
-   }
-   
+  
+  transform(value: User[], ...args: string[]): any {
+    let changedUsers;
+    if (value){
+    value.forEach(user => {
+      changedUsers += `<div>
+                      <h2>${user.id} - ${user.name}</h2>
+                      <p> ${user.phone} , ${user.email} </p>
+                      </div>`;
+    });
+    return changedUsers;}
   }
-
 }
